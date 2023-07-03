@@ -6,9 +6,12 @@
     "start": "next start"
   },
   "dependencies": {
+    "@types/styled-components": "^5.1.26",
+    "govuk-react": "^0.10.5",
     "next": "latest",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "styled-components": "^6.0.2"
   },
   "devDependencies": {
     "@types/node": "20.3.3",
