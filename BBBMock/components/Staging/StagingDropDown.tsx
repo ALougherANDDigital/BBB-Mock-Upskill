@@ -8,8 +8,10 @@ const StagingDropdown = ({ title }: StagingDropDownProps) => {
   return (
     <div>
       <Panel title="">
-        <Paragraph>{title}</Paragraph>
-        <Button>Load Data</Button>
+        <div style={{ display: "flex" }}>
+          <Paragraph>{title}</Paragraph>
+          <Button>Load Data</Button>
+        </div>
       </Panel>
     </div>
   );

@@ -1,6 +1,14 @@
 import Head from "next/head";
 import Link from "next/link";
-import { H1, Paragraph, Link as GOVLink, H3, Main, TopNav } from "govuk-react";
+import {
+  H1,
+  Paragraph,
+  Link as GOVLink,
+  Main,
+  TopNav,
+  Panel,
+  Button,
+} from "govuk-react";
 import BBBNavBar from "../components/Navigation/BBBNavBar";
 import StagingDropdown from "../components/Staging/StagingDropDown";
 
@@ -26,14 +34,20 @@ export default function Home() {
       </TopNav>
       <BBBNavBar />
       <Main>
-        <H1>Welcome back, Richard</H1>
+        <div style={{ display: "flex" }}>
+          <H1>Welcome back, Richard</H1>
+          <Button>Start New Facility Application</Button>
+        </div>
 
-        <Paragraph>Your last visit was 4 days ago.</Paragraph>
+        <div style={{ display: "flex" }}>
+          <Paragraph>Your last visit was 4 days ago.</Paragraph>
+          <Button>View Facility Portfolio</Button>
+        </div>
 
         <div>
-          <GOVLink as={Link} href="">
-            <H3>Facility Alerts For The Next 60 Days</H3>
-          </GOVLink>
+          <Panel title="">
+            <Paragraph>Facility Alerts For The Next 60 Days</Paragraph>
+          </Panel>
 
           <StagingDropdown title="Eligible facilities which will be removed if not provessed" />
 
@@ -45,12 +59,22 @@ export default function Home() {
 
           <StagingDropdown title="Facilities which will have the Guarantee removed if not Claimed" />
 
-          <StagingDropdown title="Lending Limit Utilisation" />
+          <div style={{ display: "flex" }}>
+            <StagingDropdown title="Lending Limit Utilisation" />
 
-          <StagingDropdown title="Claim Limits" />
+            <StagingDropdown title="Claim Limits" />
+          </div>
         </div>
       </Main>
       <footer>
+        <div style={{ display: "flex" }}>
+          <GOVLink as={Link} href="">
+            Privacy Policy
+          </GOVLink>
+          <GOVLink as={Link} href="">
+            Cookie Usage
+          </GOVLink>
+        </div>
         <Paragraph>(C) Copyright BBB</Paragraph>
       </footer>
     </div>
